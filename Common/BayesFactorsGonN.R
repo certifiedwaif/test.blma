@@ -4,7 +4,7 @@ library(gsl)
 library(appell)
 library(pracma)
 
-source("BAS_functions.R")
+source("Common/BAS_functions.R")
 
 ####################################################################################################
 

@@ -1,11 +1,9 @@
 
 
 library(blma)
-
-source("Common/BayesFactors.R")
-source("Common/BayesFactorsGonN.R")
-source("Common/BayesFactorsZS.R")
-
+library(blmatest)
+library(pracma)
+library(BAS)
 
 ####################################################################################################
 

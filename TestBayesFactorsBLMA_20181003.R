@@ -309,7 +309,7 @@ if (TRUE)
 	time5 <- system.time({blma_result_liang_g_n_quad   <- blma(vy, mX, prior="liang_g_n_quad"); })[3]
 	time6 <- system.time({blma_result_robust_bayarri1  <- blma(vy, mX, prior="robust_bayarri1"); })[3]
 	time7 <- system.time({blma_result_robust_bayarri2  <- blma(vy, mX, prior="robust_bayarri2"); })[3]
-	time8 <- system.time({blma_result_ZS_gauss_legendre  <- blma(vy, mX, prior="zellner_siow_gauss_legendre"); })[3]
+	time8 <- system.time({blma_result_ZS_gauss_legendre  <- blma(vy, mX, prior="hyper_g_n_gauss_legendre"); })[3]
 
 	###################################################################################################################
 

@@ -280,6 +280,7 @@ if (TRUE)
 	res <- normalize(vy,mX)
 	vy <- res$vy
 	mX <- res$mX
+	p <- ncol(mX)
 
 	###################################################################################################################
 
@@ -297,7 +298,7 @@ if (TRUE)
 	blma_result_liang_g_n_appell$vlogp[is.nan(blma_result_liang_g_n_appell$vlogp)] <- -10000
 	
 	library(blma)
-	mGamma <- graycode(p)
+	mGamma <- graycode(p,0)
 	
 	res <- CalculateProbabilities(blma_result_liang_g_n_appell$vlogp, mGamma)
 	

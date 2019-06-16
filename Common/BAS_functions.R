@@ -1,7 +1,7 @@
 
 
-dyn.load("ZS.dll")
-dyn.load("hyperGonN.dll")
+dyn.load("Common/ZS.so")
+dyn.load("Common/hyperGonN.so")
 
 
 LogBF_ZS_Laplace <- function(R2, n, p) {

@@ -346,37 +346,37 @@ if (TRUE)
 	library(BAS)
 
 	a4 <- proc.time()[3]
-	bas.bic =  bas.lm(vy~mX,prior="BIC",modelprior=uniform(), initprobs="uniform")
+	bas.bic =  bas.lm(vy~., data=as.data.frame(mX),prior="BIC",modelprior=uniform(), initprobs="uniform")
 	b4 <- proc.time()[3]
 	t4 <- b4-a4
 	cat(t4,"\n")
 
 	a5 <- proc.time()[3]
-	bas.hg =  bas.lm(vy~mX,prior="hyper-g",modelprior=uniform(), initprobs="uniform")
+	bas.hg =  bas.lm(vy~.,data=as.data.frame(mX),prior="hyper-g",modelprior=uniform(), initprobs="uniform")
 	b5 <- proc.time()[3]
 	t5 <- b5-a5
 	cat(t5,"\n")
 
 	a6 <- proc.time()[3]
-	bas.hgl =  bas.lm(vy~mX,prior="hyper-g-laplace",modelprior=uniform(), initprobs="uniform")
+	bas.hgl =  bas.lm(vy~.,data=as.data.frame(mX),prior="hyper-g-laplace",modelprior=uniform(), initprobs="uniform")
 	b6 <- proc.time()[3]
 	t6 <- b6-a6
 	cat(t6,"\n")
 
 	a7 <- proc.time()[3]
-	bas.hgn =  bas.lm(vy~mX,prior="hyper-g-n",modelprior=uniform(), initprobs="uniform")
+	bas.hgn =  bas.lm(vy~.,data=as.data.frame(mX),prior="hyper-g-n",modelprior=uniform(), initprobs="uniform")
 	b7 <- proc.time()[3]
 	t7 <- b7-a7
 	cat(t7,"\n")
 
 	a8 <- proc.time()[3]
-	bas.ZSN =  bas.lm(vy~mX,prior="ZS-null",modelprior=uniform(), initprobs="uniform")
+	bas.ZSN =  bas.lm(vy~.,data=as.data.frame(mX),prior="ZS-null",modelprior=uniform(), initprobs="uniform")
 	b8 <- proc.time()[3]
 	t8 <- b8-a8
 	cat(t8,"\n")
 
 	a9 <- proc.time()[3]
-	bas.ZSF =  bas.lm(vy~mX,prior="ZS-full",modelprior=uniform(), initprobs="uniform")
+	bas.ZSF =  bas.lm(vy~.,data=as.data.frame(mX),prior="ZS-full",modelprior=uniform(), initprobs="uniform")
 	b9 <- proc.time()[3]
 	t9 <- b9-a9
 	cat(t9,"\n")
@@ -445,7 +445,7 @@ if (TRUE)
 	
 	
 		
-	source("BAS_functions.R")
+	source("Common/BAS_functions.R")
 	vR2 <- blma_result_BIC$vR2
 	vp <- blma_result_BIC$vp_gamma
 	n  <- length(vy)

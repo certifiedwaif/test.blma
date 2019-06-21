@@ -1,7 +1,7 @@
-
-
-dyn.load("Common/ZS.so")
-dyn.load("Common/hyperGonN.so")
+ZS_so <- file.path(paste("Common/ZS", .Platform$dynlib.ext, sep=""))
+hyperGonN_so <- file.path(paste("Common/hyperGonN", .Platform$dynlib.ext, sep=""))
+dyn.load(ZS_so)
+dyn.load(hyperGonN_so)
 
 
 LogBF_ZS_Laplace <- function(R2, n, p) {

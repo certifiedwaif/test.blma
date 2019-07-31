@@ -237,9 +237,10 @@ normalize <- function(y, X) {
 
 if (TRUE)
 {
-	datname <- "UScrime"
+	#datname <- "UScrime"
 	#datname <- "Kakadu"
 	#datname <- "VietNamI"
+	datname <- "eyeData"
 
 	print(datname)
 
@@ -272,6 +273,20 @@ if (TRUE)
 		mX <- dat[,-2]
 		mX <- model.matrix(~.,data=mX)[,-1]
 		varnames <- colnames(mX)
+	}
+
+	if (datname == "eyeData") {
+	  library(blma)
+	  eyeData <- get_eyeData()
+	  vy <- eyeData$vy
+	  mX <- eyeData$mX
+	}
+
+	if (datname == "comCrime") {
+	  library(blma)
+	  comCrime <- get_comCrime()
+	  vy <- comCrime$vy
+	  mX <- comCrime$mX
 	}
 
 
@@ -318,14 +333,15 @@ if (TRUE)
 
 	a1 <- proc.time()[3]
 	bvs.rob <- my.Bvs(formula="vy~.",fixed.cov=c("Intercept"),data=data.frame(vy=vy,mX=mX),
-		prior.betas="Robust",prior.models="Constant",time.test= FALSE, priorprobs=NULL,n.keep=50000)
+	prior.betas="Robust",prior.models="Constant",time.test= FALSE, priorprobs=NULL,n.keep=50000)
 	b1 <- proc.time()[3]
 	t1 <- b1-a1
 	print(t1)
 
 	a2 <- proc.time()[3]
 	bvs.liang <- my.Bvs(formula="vy~.",fixed.cov=c("Intercept"),data=data.frame(vy=vy,mX=mX),
-		prior.betas="Liangetal",prior.models="Constant",time.test= FALSE, priorprobs=NULL,n.keep=50000)
+	prior.betas="Liangetal",prior.models="Constant",time.test= FALSE, priorprobs=NULL,n.keep=50000)
+	
 	b2 <- proc.time()[3]
 	t2 <- b2-a2
 	print(t2)
